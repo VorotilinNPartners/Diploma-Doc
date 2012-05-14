@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="SerializationData" type="SerializationDataType" />
+  <xsd:complexType name="SerializationDataType">
+    <xsd:sequence>
+      <xsd:element name="Nodes" type="NodesType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NodesType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="Node" type="NodeType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="NodeType">
+    <xsd:sequence>
+      <xsd:element name="ScreenPosition" type="ScreenPositionType" />
+      <xsd:element name="RealPosition" type="RealPositionType" />
+      <xsd:element name="Type" type="xsd:string" />
+      <xsd:element name="Volume" type="xsd:int" />
+      <xsd:element name="Id" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RealPositionType">
+    <xsd:sequence>
+      <xsd:element name="x" type="xsd:int" />
+      <xsd:element name="y" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ScreenPositionType">
+    <xsd:sequence>
+      <xsd:element name="x" type="xsd:int" />
+      <xsd:element name="y" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
